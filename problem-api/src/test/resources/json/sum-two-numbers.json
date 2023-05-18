@@ -1,0 +1,28 @@
+{
+  "id": "sum-two-numbers",
+  "name": "Sum of two numbers",
+  "description": "Compute the sum of two integers.",
+  "example": "For example if a=7 and b=3, then Return 10",
+  "constraints": "1<=a,b<=1000",
+  "topic": "ALGORITHM",
+  "tags": [
+    {
+      "key": "difficultyLevel",
+      "value": "Easy"
+    },
+    {
+      "key": "maxScore",
+      "value": "10"
+    }
+  ],
+  "testCases": {
+    "testCase1": {
+      "input": "2\n3",
+      "expectedOutput": "5"
+    },
+    "testCase2": {
+      "input": "100\n20",
+      "expectedOutput": "120"
+    }
+  }
+}

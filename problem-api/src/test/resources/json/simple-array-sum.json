@@ -1,0 +1,28 @@
+{
+  "id": "simple-array-sum",
+  "name": "Simple Array Sum",
+  "description": "Given an array of integers, find the sum of its elements.",
+  "example": "For example, if the array ar=[1,2,3], 1+2+3=6, so Return 10",
+  "constraints": "1<=a,b<=1000",
+  "topic": "PROBLEM_SOLVING",
+  "tags": [
+    {
+      "key": "difficultyLevel",
+      "value": "Easy"
+    },
+    {
+      "key": "maxScore",
+      "value": "10"
+    }
+  ],
+  "testCases": {
+    "testCase1": {
+      "input": "6\n1 2 3 4 10 11",
+      "expectedOutput": 31
+    },
+    "testCase2": {
+      "input": "2\n5 6",
+      "expectedOutput": "11"
+    }
+  }
+}

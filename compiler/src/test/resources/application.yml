@@ -1,0 +1,10 @@
+env:
+  execution:
+    path-separator: "/"
+    input-file-name: "input"
+    output-file-name: "output"
+    input-output-file-extension: ".txt"
+    delete-source-code: true
+    host-mounted-path: "/Users/adisingh16/learning/app"
+    container-mounted-path: "/app"
+    volume: "/Users/adisingh16/learning/app"

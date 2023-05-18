@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "bd5fb1a1-742e-4ba2-a55d-1f89043309e9",
+		"name": "TGA OnlineCodingPlatform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CompileAndRunCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "ecc672c8-cd8e-47b5-983e-842196f46938",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"ecc672c8-cd8e-47b5-983e-842196f46938\",\n    \"problemId\": \"eab6f4a1-70aa-4995-952b-0d437b936dbb\",\n    \"sourcecode\": \"import java.util.*;\\npublic class main {\\n   static int solveMeFirst(int a, int b) {\\n       return a + b;\\n}\\n    public static void main(String[] args) {\\n      Scanner in = new Scanner(System.in);\\n      int a;      \\n  a = in.nextInt();       \\n  int b;\\n        b = in.nextInt();\\n     int sum;\\n      sum = solveMeFirst(a, b);\\n     System.out.println(sum);\\n  }\\n}\",\n    \"language\": \"JAVA\",\n    \"testCases\": {\n        \"testCase1\": {\n            \"input\": \"1\\n2\",\n            \"expectedOutput\": \"3\"\n        },\n        \"testCase2\": {\n            \"input\": \"3\\n4\",\n            \"expectedOutput\": \"7\"\n        }\n    },\n    \"timeLimit\": 10,\n    \"memoryLimit\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/compile/json",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"compile",
+						"json"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompileAndRunCodeJava",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "ecc672c8-cd8e-47b5-983e-842196f46938",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"ecc672c8-cd8e-47b5-983e-842196f46938\",\n    \"problemId\": \"eab6f4a1-70aa-4995-952b-0d437b936dbb\",\n    \"sourceCode\": \"import java.util.*;\\npublic class Main {\\n   static int solveMeFirst(int a, int b) {\\n       return a + b;\\n}\\n    public static void main(String[] args) {\\n      Scanner in = new Scanner(System.in);\\n      int a;      \\n  a = in.nextInt();       \\n  int b;\\n        b = in.nextInt();\\n     int sum;\\n      sum = solveMeFirst(a, b);\\n     System.out.println(sum);\\n  }\\n}\",\n    \"language\": \"JAVA\",\n    \"testCases\": {\n        \"testCase1\": {\n            \"input\": \"1\\n2\",\n            \"expectedOutput\": \"3\"\n        },\n        \"testCase2\": {\n            \"input\": \"3\\n4\",\n            \"expectedOutput\": \"7\"\n        }\n    },\n    \"timeLimit\": 10,\n    \"memoryLimit\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submissions/compile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submissions",
+						"compile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CompileAndRunCodePython",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "userId",
+						"value": "ecc672c8-cd8e-47b5-983e-842196f46938",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"ecc672c8-cd8e-47b5-983e-842196f46938\",\n    \"problemId\": \"eab6f4a1-70aa-4995-952b-0d437b936dbb\",\n    \"sourceCode\": \"if __name__ == '__main__':\\n    a = int(input())\\n    b = int(input())\\n    print(a+b)\",\n    \"language\": \"PYTHON\",\n    \"testCases\": {\n        \"testCase1\": {\n            \"input\": \"1\\n2\",\n            \"expectedOutput\": \"3\"\n        },\n        \"testCase2\": {\n            \"input\": \"3\\n4\",\n            \"expectedOutput\": \"7\"\n        }\n    },\n    \"timeLimit\": 10,\n    \"memoryLimit\": 500\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/submissions/compile",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"submissions",
+						"compile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProblem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"compare-the-triplets\",\n    \"name\": \"Compare the triplets\",\n    \"description\": \"Alice and Bob each created one problem for HackerRank. A reviewer rates the two challenges, awarding points on a scale from 1 to 100 for three categories: problem clarity, originality, and difficulty.\\n\\nThe rating for Alice's challenge is the triplet a = (a[0], a[1], a[2]), and the rating for Bob's challenge is the triplet b = (b[0], b[1], b[2]).The task is to find their comparison points by comparing a[0] with b[0], a[1] with b[1], and a[2] with b[2].\\n\\nIf a[i] > b[i], then Alice is awarded 1 point.\\nIf a[i] < b[i], then Bob is awarded 1 point.\\nIf a[i] = b[i], then neither person receives a point.\\nComparison points is the total points a person earned.\\n\\nGiven a and b, determine their respective comparison points.\",\n    \"example\": \"For example, a = [1, 2, 3], b = [3, 2, 1], For elements *0*, Bob is awarded a point because a[0] .\\nFor the equal elements a[1] and b[1], no points are earned.\\nFinally, for elements 2, a[2] > b[2] so Alice receives a point.\\nThe return array is [1, 1] with Alice's score first and Bob's second.\",\n    \"constraints\": \"1<=a[i]<=1000\\n1<=b[i]<=1000\",\n    \"topic\": \"PROBLEM_SOLVING\",\n    \"tags\": [\n        {\n            \"key\": \"difficultyLevel\",\n            \"value\": \"Easy\"\n        },\n        {\n            \"key\": \"maxScore\",\n            \"value\": \"10\"\n        }\n    ],\n    \"testCases\": {\n        \"testCase1\": {\n            \"input\": \"5 6 7\\n3 6 10\",\n            \"expectedOutput\": \"1 1\"\n        },\n        \"testCase2\": {\n            \"input\": \"1 4 6\\n1 4 6\",\n            \"expectedOutput\": \"0 0\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/problems",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"problems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProblemsById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/problems/compare-the-triplets",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"problems",
+						"compare-the-triplets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProblemsLimited",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/problems?limit=1&offset=0",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"problems"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProblemsByTopic",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/problems/topic/PROBLEM_SOLVING",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"problems",
+						"topic",
+						"PROBLEM_SOLVING"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

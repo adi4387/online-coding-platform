@@ -1,0 +1,22 @@
+configuration:
+  appenders:
+    # fluentd running on Azure collects the logs from stdout
+    console:
+      - name: JSON_CONSOLE_APPENDER
+        target: SYSTEM_OUT
+      - name: FREE_FORM_CONSOLE_APPENDER
+        patternLayout:
+          pattern: '{ "date": "%d", "level": "%p", "thread": "%t", "eventType": "UnexpectedError", "class": "%c", "content": "%m" }%n'
+        target: SYSTEM_OUT
+
+  loggers:
+    logger:
+      - name: com.tesco
+        level: debug
+        additivity: false
+        appenderRef:
+          - ref: JSON_CONSOLE_APPENDER
+    root:
+      level: error
+      appenderRef:
+        - ref: FREE_FORM_CONSOLE_APPENDER

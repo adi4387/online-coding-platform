@@ -1,0 +1,23 @@
+{{- if .Values.configMap.create -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-config
+data:
+  {{- range $key, $value := $.Values.conf.cluster }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end  }}
+{{- end }}
+---
+{{- if .Values.configMap.create -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "couchbase.name" . }}-config
+  labels:
+    {{- include "couchbase.labels" . | nindent 4 }}
+data:
+  {{- range $key, $value := $.Values.conf.couchbase }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end  }}
+{{- end }}

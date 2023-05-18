@@ -1,0 +1,30 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: problem-api-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 8080
+        name: papi
+        protocol: HTTP
+      hosts:
+        - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: problemapibin
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - problem-api-gateway
+  http:
+    - route:
+        - destination:
+            host: problem-api
+            port:
+              number: 80

@@ -1,0 +1,28 @@
+{
+  "id": "multiply-two-numbers",
+  "name": "Multiply of two numbers",
+  "description": "Compute the multiply of two integers.",
+  "example": "For example if a=7 and b=3, then Return 21",
+  "constraints": "1<=a,b<=1000",
+  "topic": "PROBLEM_SOLVING",
+  "tags": [
+    {
+      "key": "difficultyLevel",
+      "value": "Easy"
+    },
+    {
+      "key": "maxScore",
+      "value": "10"
+    }
+  ],
+  "testCases": {
+    "testCase1": {
+      "input": "2\n3",
+      "expectedOutput": "6"
+    },
+    "testCase2": {
+      "input": "100\n20",
+      "expectedOutput": "2000"
+    }
+  }
+}

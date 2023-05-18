@@ -1,0 +1,14 @@
+FROM python:3
+
+WORKDIR /app
+
+USER root
+
+RUN groupadd -r user -g 111 && \
+    useradd -u 111 -r -g user -s /sbin/nologin -c "Docker image user" user
+
+RUN chown -R user:user /app
+
+USER user
+
+ENTRYPOINT ["/bin/sh", "-c", "python3 $EXECUTION_PATH/$SOURCE_CODE_FILE_NAME < $EXECUTION_PATH/$TEST_CASE_FILE_NAME"]

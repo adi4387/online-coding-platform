@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  couchbase-dev:
+    image: couchbase-dev:latest
+    restart: unless-stopped
+    ports:
+      - "8091:8091"
+      - "8092:8092"
+      - "8093:8093"
+      - "11210:11210"
+  problem-api:
+    depends_on:
+      - couchbase-dev
+    image: problem-api:latest
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_COUCHBASE_CONNECTION-STRING: 'couchbase://couchbase-dev'
+      SPRING_COUCHBASE_.username" : 'Administrator'
+      SPRING_COUCHBASE_.password" : 'password'
+      SPRING_COUCHBASE_BUCKET_NAME" : 'online-coding-platform'
+      SPRING_COUCHBASE_BUCKET_TYPE-KEY" : '_class'
+  compiler:
+    image: compiler:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - compiler:/compiler/executions
+    ports:
+      - "8081:8080"
+volumes:
+  compiler:

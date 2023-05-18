@@ -1,0 +1,13 @@
+FROM openjdk:17.0.1-jdk-slim
+
+WORKDIR /app
+
+USER root
+
+RUN addgroup --system javauser && adduser --system --disabled-login --ingroup javauser javauser
+RUN chown -R javauser:javauser /app
+
+USER javauser
+
+
+ENTRYPOINT ["/bin/sh", "-c", "java -cp $EXECUTION_PATH $COMPILE_CODE_FILE_NAME < $EXECUTION_PATH/$TEST_CASE_FILE_NAME"]
