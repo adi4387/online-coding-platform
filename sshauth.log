@@ -1,0 +1,29 @@
+INFO: 2023/05/19 12:17:16 logging.go:30: Egress request:
+GET /encryption/pki/ssh/client/sshauth/supportedVersions HTTP/1.1
+Host: api.tesco.com
+User-Agent: Go-http-client/1.1
+Requestid: 302ed015-c6e9-d8f4-8c56-874f49f11bdb
+Traceid: dc738936-1218-03de-1459-ece80d47818b
+X-Api-Key: (redacted)
+X-Crypt-Sshauth-Version: 1.0.9
+Accept-Encoding: gzip
+
+INFO: 2023/05/19 12:17:17 logging.go:30: Egress response:
+HTTP/1.1 200 OK
+Transfer-Encoding: chunked
+Buildtime: 1684393369807
+Connection: keep-alive
+Content-Type: application/json
+Date: Fri, 19 May 2023 06:47:17 GMT
+Deploymentenvironment: prod_azure_eun_green
+Githash: _213b1e49ed
+Nodename: aks-prodcrypteun-10145198-vmss000002
+Normalisedpath: /pki/ssh/client/__/supportedVersions
+Requestid: rrt-09531099646a95bb0-b-eu-4222-1094138980-1
+Server: Tesco Inter Service Communication
+Servicelifecycleid: 5a64a6b2-d9e7-435b-85b3-c64d81987801
+Servicename: pkiservice
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Traceid: dc738936-1218-03de-1459-ece80d47818b
+Userid: Ml94L9BXGfRjXeL4z_AoMGt7v1BL1M2eBOXn6kIjSWU
+
